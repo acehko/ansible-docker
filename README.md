@@ -1,4 +1,6 @@
 # Ansible Role: Docker
+[![Build Status](https://travis-ci.com/acehko/ansible-docker.svg?branch=master)](https://travis-ci.com/acehko/ansible-docker)
+
 Ansible role that installs Docker and Docker Compose.
 
 **Supported Platforms:**
