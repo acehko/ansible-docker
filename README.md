@@ -1,16 +1,14 @@
 # Ansible Role: Docker
-
 Ansible role that installs Docker and Docker Compose.
 
-## Supported OS
+**Supported Platforms:**
 - Arch Linux
-- Debian
+- Debian buster
 
 ## Requirements
 To install Docker Compose on Debian, Python pip is required.
 
 ## Role Variables
-
 | Variable           | Default | Description                                                         |
 |:-------------------|:--------|:--------------------------------------------------------------------|
 | **docker_compose** | `true`  | Whether to install docker compose.                                  |
@@ -18,7 +16,6 @@ To install Docker Compose on Debian, Python pip is required.
 | **docker_users**   | `[]`    | A list of users that should be added to the docker group.           |
 
 ## Dependencies
-
 None.
 
 ## Example Playbook
