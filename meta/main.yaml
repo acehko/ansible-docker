@@ -1,0 +1,22 @@
+galaxy_info:
+  author: Andrija Čehko
+  description: Ansible role that installs Docker and Docker Compose.
+  company:
+  issue_tracker_url: https://github.com/acehko/ansible-docker/issues
+  license: license (MIT)
+  min_ansible_version: 2.9
+  platforms:
+    - name: ArchLinux
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - buster
+
+  galaxy_tags:
+    - docker
+    - containers
+    - arch
+    - debian
+
+  dependencies: []

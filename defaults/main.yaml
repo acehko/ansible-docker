@@ -1,0 +1,9 @@
+---
+# Whether to install docker compose.
+docker_compose: true
+
+# The pip executable to use when installing docker compose on Debian.
+pip_executable: pip3
+
+# A list of users that should be added to the docker group.
+docker_users: []

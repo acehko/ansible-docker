@@ -1,0 +1,13 @@
+- name: Install docker
+  become: true
+  pacman:
+    name: docker
+    state: present
+  notify: Start docker
+
+- name: Install docker compose
+  become: true
+  pacman:
+    name: docker-compose
+    state: present
+  when: docker_compose | bool

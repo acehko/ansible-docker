@@ -1,0 +1,6 @@
+---
+- name: Stop docker
+  become: true
+  service:
+    name: docker
+    state: stopped

@@ -1,0 +1,40 @@
+---
+- name: Check if docker is installed
+  command: which docker
+  failed_when: false
+  changed_when: false
+  register: docker_installed
+
+- name: Download docker install script
+  get_url:
+    url: https://get.docker.com/
+    dest: /tmp/get-docker.sh
+    mode: "a+x"
+  when: docker_installed.rc == 1
+
+- name: Install docker
+  become: true
+  command: /tmp/get-docker.sh
+  notify: Start docker
+  when: docker_installed.rc == 1
+
+- name: Delete docker install script
+  file:
+    path: /tmp/get-docker.sh
+    state: absent
+  when: docker_installed.rc == 1
+
+- name: Check if docker compose is installed
+  command: which docker-compose
+  failed_when: false
+  changed_when: false
+  register: compose_installed
+  when: docker_compose | bool
+
+- name: Install docker compose
+  become: true
+  pip:
+    name: docker-compose
+    state: present
+    executable: "{{ pip_executable }}"
+  when: docker_compose | bool and compose_installed.rc == 1
