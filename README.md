@@ -8,6 +8,8 @@ Ansible role that installs Docker and Docker Compose.
 - Debian buster
 
 ## Requirements
+> **gather_facts** is required for OS detection.
+
 To install Docker Compose on Debian, Python pip is required.
 
 ## Role Variables
@@ -24,7 +26,7 @@ None.
 
 ```yaml
 - hosts: docker
-  gather_facts: yes # required for os detection
+  gather_facts: true
   roles:
     - role: acehko.docker
       docker_compose: true
