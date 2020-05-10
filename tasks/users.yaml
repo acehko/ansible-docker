@@ -5,4 +5,5 @@
     name: "{{ item }}"
     groups: docker
     append: true
-  with_items: "{{ docker_users }}"
+  loop: "{{ docker_users }}"
+  when: docker_users | length

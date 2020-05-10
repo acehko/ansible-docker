@@ -1,7 +1,2 @@
 ---
 - include_tasks: install_{{ ansible_facts.distribution.lower() }}.yaml
-# - import_tasks: install_arch.yaml
-#   when: ansible_facts.distribution == 'Archlinux'
-#
-# - import_tasks: install_debian.yaml
-#   when: ansible_facts.distribution == 'Debian'

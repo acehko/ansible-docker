@@ -1,5 +1,5 @@
 ---
-- name: Stop docker
+- name: Stop Docker
   become: true
   service:
     name: docker

@@ -1,0 +1,8 @@
+---
+- name: Install Ansible Docker module requirements
+  become: true
+  pip:
+    name:
+      - docker
+      - docker-compose
+    state: present

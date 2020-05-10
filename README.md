@@ -3,21 +3,20 @@
 
 Ansible role that installs Docker and Docker Compose.
 
-**Supported Platforms:**
+## Supported Platforms
 - Arch Linux
 - Debian buster
 
 ## Requirements
-> **gather_facts** is required for OS detection.
-
-To install Docker Compose on Debian, Python pip is required.
+- **gather_facts** is required for OS detection.
+- Python 3. Python 2 is not supported.
 
 ## Role Variables
-| Variable           | Default | Description                                                         |
-|:-------------------|:--------|:--------------------------------------------------------------------|
-| **docker_compose** | `true`  | Whether to install docker compose.                                  |
-| **pip_executable** | `pip3`  | The pip executable to use when installing docker compose on Debian. |
-| **docker_users**   | `[]`    | A list of users that should be added to the docker group.           |
+| Variable            | Default | Description                                                          |
+|:--------------------|:--------|:---------------------------------------------------------------------|
+| **docker_compose**  | `true`  | Whether to install docker compose.                                   |
+| **docker_users**    | `[]`    | A list of users that should be added to the docker group.            |
+| **ansible_modules** | `false` | Whether to install packages required for the ansible docker modules. |
 
 ## Dependencies
 None.
@@ -25,12 +24,11 @@ None.
 ## Example Playbook
 
 ```yaml
-- hosts: docker
+- hosts: all
   gather_facts: true
   roles:
     - role: acehko.docker
       docker_compose: true
-      pip_executable: pip3
       docker_users:
         - user1
         - user2
