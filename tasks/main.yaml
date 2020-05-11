@@ -1,4 +1,4 @@
 ---
-- import_tasks: install.yaml
+- include_tasks: install_{{ ansible_facts.distribution.lower() }}.yaml
+- include_tasks: ansible_{{ ansible_facts.distribution.lower() }}.yaml
 - import_tasks: users.yaml
-- import_tasks: ansible.yaml

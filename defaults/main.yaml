@@ -2,8 +2,8 @@
 # Whether to install docker compose.
 docker_compose: true
 
+# Whether to install packages required for the ansible docker modules.
+docker_ansible_modules: false
+
 # A list of users that should be added to the docker group.
 docker_users: []
-
-# Whether to install packages required for the ansible docker modules.
-ansible_modules: false

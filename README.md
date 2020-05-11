@@ -12,11 +12,11 @@ Ansible role that installs Docker and Docker Compose.
 - Python 3. Python 2 is not supported.
 
 ## Role Variables
-| Variable            | Default | Description                                                          |
-|:--------------------|:--------|:---------------------------------------------------------------------|
-| **docker_compose**  | `true`  | Whether to install docker compose.                                   |
-| **docker_users**    | `[]`    | A list of users that should be added to the docker group.            |
-| **ansible_modules** | `false` | Whether to install packages required for the ansible docker modules. |
+| Variable                   | Default | Description                                                          |
+|:---------------------------|:--------|:---------------------------------------------------------------------|
+| **docker_compose**         | `true`  | Whether to install docker compose.                                   |
+| **docker_ansible_modules** | `false` | Whether to install packages required for the ansible docker modules. |
+| **docker_users**           | `[]`    | A list of users that should be added to the docker group.            |
 
 ## Dependencies
 None.
